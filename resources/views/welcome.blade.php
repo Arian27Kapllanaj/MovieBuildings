@@ -9,9 +9,7 @@
 
      <h2 id="title">Movie Buildings</h2>
 
-    <div id="body-design">
         <p><a id="login-button" href="{{ url('login') }}">Log In</a></p>
-    </div> <!-- body design-->
 
 </body>
 
