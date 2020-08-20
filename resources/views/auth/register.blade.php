@@ -61,8 +61,8 @@
                       <!--  <form method="post"> -->
                             @csrf
                                <select name="user_type" id="">                                    
-                                    <option>User</option>
-                                    <option>Moderator</option>
+                                    <option value='user'>User</option>
+                                    <option value='moderator'>Moderator</option>
                                 </select>
                             <!-- </form> -->
 

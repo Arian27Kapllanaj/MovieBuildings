@@ -25,4 +25,12 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function user() {
+        return view('user_page');
+    }
+
+    public function moderator() {
+        return view('moderator_page');
+    }
 }
