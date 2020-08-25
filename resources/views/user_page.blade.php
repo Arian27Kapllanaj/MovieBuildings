@@ -107,7 +107,26 @@
     -->
     <script defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKt6Ikgg3SkflVMQqu_-QG-IRLia_deh4&callback=initMap">
-    </script>
+
+//marker test
+      function initMap(): void {
+        const map = new google.maps.Map(
+          document.getElementById("map") as HTMLElement,
+          {
+            zoom: 4,
+            center: { lat: -33, lng: 151 }
+          }
+        );
+
+        const image =
+          "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
+        const beachMarker = new google.maps.Marker({
+          position: { lat: -33.89, lng: 151.274 },
+          map,
+          icon: image
+        });
+      }
+        </script>
 
     <a href="{{ url('logout') }}">Logout</a>
   </body>
