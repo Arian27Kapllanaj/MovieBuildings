@@ -49,5 +49,9 @@ class LoginController extends Controller
             return '/moderator/page';
         }
 
+        else if(Auth::user()->user_type == 'admin') {
+            return '/admin/page';
+        }
+
     } 
 }

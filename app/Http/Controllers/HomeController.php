@@ -33,4 +33,8 @@ class HomeController extends Controller
     public function moderator() {
         return view('moderator_page');
     }
+
+    public function admin() {
+        return view('admin_page');
+    }
 }

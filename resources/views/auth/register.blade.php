@@ -63,6 +63,7 @@
                                <select name="user_type" id="">                                    
                                     <option value='user'>User</option>
                                     <option value='moderator'>Moderator</option>
+                                    <option value='admin'>Admin</option>
                                 </select>
                             <!-- </form> -->
 
