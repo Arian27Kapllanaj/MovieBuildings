@@ -27,7 +27,7 @@
       function initMap() {
         // Styles a map in night mode.
         var map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 40.674, lng: -73.945},
+          center: {lat: 40.901562, lng: 20.656023},
           zoom: 12,
           styles: [
             {elementType: 'geometry', stylers: [{color: '#242f3e'}]},
@@ -112,8 +112,9 @@
         });
       }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKt6Ikgg3SkflVMQqu_-QG-IRLia_deh4&callback=initMap"
-    defer></script>
+    <script defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKt6Ikgg3SkflVMQqu_-QG-IRLia_deh4&callback=initMap">
+    </script>
   </body>
 </html>
 
