@@ -58,17 +58,13 @@
 
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('user_type') }}</label>
                         <br>
-                      <!--  <form method="post"> -->
                             @csrf
                                <select name="user_type" id="">                                    
                                     <option value='user'>User</option>
                                     <option value='moderator'>Moderator</option>
                                 </select>
-                            <!-- </form> -->
 
                             <div class="col-md-6">
-                                <!-- <input id="user_type" type="text" class="form-control @error('user_type') is-invalid @enderror" name="user_type" value="{{ old('user_type') }}" required autocomplete="user_type" autofocus>
--->
                                 @error('user_type')
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>

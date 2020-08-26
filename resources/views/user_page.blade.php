@@ -69,7 +69,8 @@
           //  console.log("SW " + sw.lat() + " " + sw.lng());
           
           var xmlhttp = new XMLHttpRequest();
-          var url = "http://localhost/soc2020/practice/public/map/api/points/"+
+          //url doesnt found
+          var url = "http://localhost/Movies/public/user/page"+
                     ne.lat()+"/"+ne.lng()+"/"+sw.lat()+"/"+sw.lng();
           xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {
@@ -109,25 +110,35 @@
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBKt6Ikgg3SkflVMQqu_-QG-IRLia_deh4&callback=initMap">
 
 //marker test
-      function initMap(): void {
-        const map = new google.maps.Map(
-          document.getElementById("map") as HTMLElement,
-          {
-            zoom: 4,
-            center: { lat: -33, lng: 151 }
-          }
-        );
-
-        const image =
-          "https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png";
-        const beachMarker = new google.maps.Marker({
-          position: { lat: -33.89, lng: 151.274 },
-          map,
-          icon: image
-        });
-      }
+      xmlhttp.onreadystatechange = function() {
+                  if (this.readyState == 4 && this.status == 200) {
+                      var json = JSON.parse(this.responseText);
+                      for(i = 0; i < json.length; i++) {
+                          console.log(json[i].description);
+                          var myLatlng = new google.maps.LatLng(json[i].lat, json[i].lon);
+                          console.log(myLatlng);
+                          var marker = new google.maps.Marker({
+                              position: myLatlng,
+                              map: map,
+                          });
+                          markers.push(marker);
+                          
+                          google.maps.event.addListener(marker, 'click', (function(marker, i) {
+                              return function() {
+                                  var infowindow = new google.maps.InfoWindow();
+                                  infowindow.setContent(json[i].description);
+                                  infowindow.open(map, marker);
+                              }
+                          })(marker, i));
+                
+                      }
+                  }
+                };
+                xmlhttp.open("GET", url, true);
+                xmlhttp.send();
+//market test end
         </script>
-
+    <br>
     <a href="{{ url('logout') }}">Logout</a>
   </body>
 </html>
