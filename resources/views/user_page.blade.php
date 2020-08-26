@@ -35,39 +35,28 @@
   <h3>User Page</h3>
 
     <div id="map"></div>
-    <div id="legend"><h3>Legend</h3></div>
+    <!-- <div id="legend"><h3>Legend</h3></div> -->
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
-          center: new google.maps.LatLng(40.901587, 20.656046),
+          center: new google.maps.LatLng(40.902782, 20.657920),
           mapTypeId: 'roadmap'
         });
-
         var iconBase = 'https://maps.google.com/mapfiles/kml/shapes/';
         var icons = {
-          parking: {
-            name: 'Parking',
-            icon: iconBase + 'parking_lot_maps.png'
-          },
-          library: {
-            name: 'Library',
-            icon: iconBase + 'library_maps.png'
-          },
           info: {
             name: 'Info',
             icon: iconBase + 'info-i_maps.png'
           }
         };
-
         var features = [
           {
-            position: new google.maps.LatLng(40.902782, 20.657920),
-            type: 'parking'
+            position: new google.maps.LatLng(40.901514, 20.672501),
+            type: 'info'
           }
         ];
-
         // Create markers.
         features.forEach(function(feature) {
           var marker = new google.maps.Marker({
@@ -76,7 +65,7 @@
             map: map
           });
         });
-
+        /*
         var legend = document.getElementById('legend');
         for (var key in icons) {
           var type = icons[key];
@@ -86,8 +75,7 @@
           div.innerHTML = '<img src="' + icon + '"> ' + name;
           legend.appendChild(div);
         }
-
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend);
+        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend); */
       }
     </script>
     <script defer
