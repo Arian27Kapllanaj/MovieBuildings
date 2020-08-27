@@ -31,6 +31,13 @@
           //center: new google.maps.LatLng(40.902782, 20.657920),
           mapTypeId: 'roadmap'
         });
+        google.maps.event.addListener(map, "dragend", function() {
+            var center = this.getCenter();
+            var latitude = center.lat();
+            var longitude = center.lng();
+            console.log("current latitude is: " + latitude);
+            console.log("current longitude is: " + longitude);
+          });
 
         infoWindow = new google.maps.InfoWindow;
 
