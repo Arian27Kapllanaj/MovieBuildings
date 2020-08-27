@@ -15,19 +15,6 @@
         height: 400px;
         width: 100%;
       }
-      #legend {
-        font-family: Arial, sans-serif;
-        background: #fff;
-        padding: 10px;
-        margin: 10px;
-        border: 3px solid #000;
-      }
-      #legend h3 {
-        margin-top: 0;
-      }
-      #legend img {
-        vertical-align: middle;
-      }
     </style>
   </head>
   <body>
@@ -97,17 +84,6 @@
             map: map
           });
         });
-        /*
-        var legend = document.getElementById('legend');
-        for (var key in icons) {
-          var type = icons[key];
-          var name = type.name;
-          var icon = type.icon;
-          var div = document.createElement('div');
-          div.innerHTML = '<img src="' + icon + '"> ' + name;
-          legend.appendChild(div);
-        }
-        map.controls[google.maps.ControlPosition.RIGHT_BOTTOM].push(legend); */
       }
     </script>
     <script defer
