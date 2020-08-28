@@ -16,6 +16,10 @@
         margin: 0;
         padding: 0;
       }
+
+      body {
+        background-color: gray;
+      }
     </style>
   </head>
   <body>

@@ -7,7 +7,7 @@
 </head>
 <body>
   <h2>Admin Page</h2>
-
+    
   <a href="{{ url('logout') }}">Logout</a>
 </body>
 </html>

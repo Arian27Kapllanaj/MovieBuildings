@@ -15,6 +15,10 @@
         height: 400px;
         width: 100%;
       }
+
+      body {
+        background-color: gray;
+      }
     </style>
   </head>
   <body>
@@ -22,13 +26,12 @@
   <h3>User Page</h3>
 
     <div id="map"></div>
-    <!-- <div id="legend"><h3>Legend</h3></div> -->
+
     <script>
       var map;
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
           zoom: 16,
-          //center: new google.maps.LatLng(40.902782, 20.657920),
           mapTypeId: 'roadmap'
         });
         google.maps.event.addListener(map, "dragend", function() {
